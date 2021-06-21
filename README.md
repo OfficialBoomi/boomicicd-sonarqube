@@ -16,4 +16,7 @@ Here are sample rules found in the XML.
 |Connection URL |The connection property URL shall not be hard coded|/Component/Overrides/Connections/ConnectionOverride/field[@id="URL"][@overrideable='false']|
 |Connection username|The connection property username shall not be hard coded|/Component/Overrides/Connections/ConnectionOverride/field[@id="user"][@overrideable='false']|
 |Connection password|The connection property password shall not be hard coded|/Component/Overrides/Connections/ConnectionOverride/field[@id="password"][@overrideable='false']|
-  
+|Atom Queue Listener Max Connections|Max connections on Atom Queue listener is set to unbounded|/Component/object/Operation/Configuration/QueueGetAction[@maxConcurrentExecutions='0']|
+|Missing DeadLetter Atom Queue |Atom Queue does not have a dead letter queue|/Component/object/Operation/Configuration/QueueGetAction[@deadLetterQueue='false']|
+|JMS Listener Max Connections|Max connections on JMS listener is set to unbounded|/Component/object/Operation/Configuration/JMSGetAction[@maxConcurrentExecutions='0']|
+|General Model Listener Process|Listener process is running in configured to run in General Mode|/Component/object/process/shapes/shape/configuration/connectoraction[@actionType='Listen']/../../../../../process[@workload='general']|
