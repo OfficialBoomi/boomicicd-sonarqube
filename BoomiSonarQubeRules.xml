@@ -248,7 +248,7 @@
             </parameter>
             <parameter>
                <key>expression</key>
-               <value>/bns:Component/bns:object/process/shapes/shape/configuration/connectoraction[@actionType='Listen']/../../../../../process[@workload='general']</value>
+               <value>/bns:Component/bns:object/process/shapes/shape/configuration/connectoraction[lower-case(@actionType)='listen']/../../../../../process[@workload='general']</value>
             </parameter>
             <parameter>
                <key>message</key>
