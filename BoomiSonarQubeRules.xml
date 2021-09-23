@@ -256,5 +256,29 @@
             </parameter>
          </parameters>
       </rule>
+      <!-- Added this rule for ASB Listen action. Tried to be cute by using an lower-case function by SonarQube does like it -->
+      <rule>
+         <repositoryKey>xml</repositoryKey>
+         <key>GeneralModeListener_1</key>
+         <type>BUG</type>
+         <priority>MINOR</priority>
+         <name>General Model Listener Process</name>
+         <templateKey>XPathCheck</templateKey>
+         <description>A listener Process can run in Low Latency mode instead of General Mode</description>
+         <parameters>
+            <parameter>
+               <key>filePattern</key>
+               <value>**/**.xml</value>
+            </parameter>
+            <parameter>
+               <key>expression</key>
+               <value>/bns:Component/bns:object/process/shapes/shape/configuration/connectoraction[@actionType='LISTEN']/../../../../../process[@workload='general']</value>
+            </parameter>
+            <parameter>
+               <key>message</key>
+               <value>Process with a Listener start shape is running can run in Low Latency Mode</value>
+            </parameter>
+         </parameters>
+      </rule>
    </rules>
 </profile>
