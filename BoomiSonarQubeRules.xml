@@ -28,6 +28,29 @@
       </rule>
       <rule>
          <repositoryKey>xml</repositoryKey>
+         <key>Disconnected_Shapes</key>
+         <type>CODE_SMELL</type>
+         <priority>MAJOR</priority>
+         <name>Boomi Components Shapes are not connected</name>
+         <templateKey>XPathCheck</templateKey>
+         <description>One or more shapes are found that are disconnected</description>
+         <parameters>
+            <parameter>
+               <key>filePattern</key>
+               <value>**/**.xml</value>
+            </parameter>
+            <parameter>
+               <key>expression</key>
+               <value>/bns:Component/bns:object/process/shapes/shape/dragpoints/dragpoint[@toShape='unset']</value>
+            </parameter>
+            <parameter>
+               <key>message</key>
+               <value>There shall not be disconnected shapes in the Boomi Process design.</value>
+            </parameter>
+         </parameters>
+      </rule>
+      <rule>
+         <repositoryKey>xml</repositoryKey>
          <key>Description_Must_Not_Be_Empty</key>
          <type>CODE_SMELL</type>
          <priority>MINOR</priority>
@@ -186,30 +209,7 @@
                <value>AtomQ Listener shall not have 0 as max connections</value>
             </parameter>
          </parameters>
-      </rule>
-      <rule>
-         <repositoryKey>xml</repositoryKey>
-         <key>AtomQueue_Has_NoDLQ</key>
-         <type>BUG</type>
-         <priority>MINOR</priority>
-         <name>AtomQ Dead Letter Queue</name>
-         <templateKey>XPathCheck</templateKey>
-         <description>AtomQ does not have a Dead Letter Queue</description>
-         <parameters>
-            <parameter>
-               <key>filePattern</key>
-               <value>**/**.xml</value>
-            </parameter>
-            <parameter>
-               <key>expression</key>
-               <value>/bns:Component/bns:object/Operation/Configuration/QueueGetAction[@deadLetterQueue='false']</value>
-            </parameter>
-            <parameter>
-               <key>message</key>
-               <value>AtomQ Listener should have a Dead Letter Queue</value>
-            </parameter>
-         </parameters>
-      </rule>
+      </rule>     
       <rule>
          <repositoryKey>xml</repositoryKey>
          <key>JMS_Has_NoMinConnections</key>
