@@ -87,7 +87,7 @@
             </parameter>
             <parameter>
                <key>expression</key>
-               <value>/bns:Component/bns:object/process/shapes/shape[@shapetpye='exception']/configuration/exception/exMessage/text()[not(contains(.,'{1}'))]</value>
+               <value>/bns:Component/bns:object/process/shapes/shape[@shapetype='exception']/configuration/exception/exMessage/text()[not(contains(.,'{1}'))]</value>
             </parameter>
             <parameter>
                <key>message</key>
